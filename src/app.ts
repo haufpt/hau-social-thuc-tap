@@ -1,6 +1,6 @@
 //Route duoc import de lay path va router
 //chay constructor giong nhu 1 get
-import { Route } from "core/interfaces";
+import { Route } from "@core/interfaces";
 import express from 'express';
 import mongoose from "mongoose";
 class App{
@@ -30,8 +30,13 @@ class App{
     }
 
     private connectToDatabase(){
+        const connectString=process.env.MONGODB_URL;
+
+     if(!connectString){
+            console.log("Connection string is invalid");
+        }
         try {
-            mongoose.connect('mongodb+srv://nguyenduchau12g:projectdautien@main.sbksmxq.mongodb.net/?retryWrites=true&w=majority');
+            mongoose.connect(`${connectString}`);
             console.log("Database connected")
         } catch (error) {
             console.log("Connect to Db error")
