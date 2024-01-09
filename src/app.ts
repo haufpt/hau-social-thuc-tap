@@ -1,3 +1,5 @@
+//Route duoc import de lay path va router
+//chay constructor giong nhu 1 get
 import { Route } from "core/interfaces";
 import express from 'express';
 class App{

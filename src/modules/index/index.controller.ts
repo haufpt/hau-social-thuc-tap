@@ -1,3 +1,4 @@
+//phan ham cua 1 get = index
 import { NextFunction, Request, Response } from "express";
 
 export default class IndexController{
